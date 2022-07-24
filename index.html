@@ -14,7 +14,7 @@
 <body>
     <main>
         <section class="robotron">
-            <img class="robo" src="img/robotron.png" alt="Robotron">
+            <img class="robo" id="robotron-img" src="img/tron-azul.png" alt="Robotron">
             <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
         </section>
 
@@ -93,11 +93,27 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" value="Iniciar produção" class="producao" id="producao">
+                <input type="button" value="Iniciar produção" class="producao" id="producao">
             </form>
+        </section>
+
+        <section class="robotron-colors" >
+            <div class="h1-colors">
+                <h1>Escolha uma cor</h1>
+            </div>
+            <div class="colors">
+                <input class="btn-colors" type="button" value="Branco">
+                <input class="btn-colors" type="button" value="Amarelo">
+                <input class="btn-colors" type="button" value="Preto">
+                <input class="btn-colors" type="button" value="Rosa">
+                <input class="btn-colors" type="button" value="Azul">
+                <input class="btn-colors" type="button" value="Vermelho">
+    
+            </div>
         </section>
     </main>
 
+    <div id="loop"></div>
     <script src="JS/main.js"></script>
 </body>
 </html>

@@ -6,6 +6,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -26,19 +28,19 @@ main {
     height: 80vh;
     margin: 10vh 8vw 10vh 12vw;
     display: flex;
-    gap: 1vw;
+    gap: 2vw;
 }
 
 .robotron {
     background: url(../img/estrutura.png) no-repeat;
     background-position: center center;
     margin: 0;
-    flex-basis: 40%;
+    flex-basis: 30%;
     position: relative;
 }
 
 .robo {
-    height: 110%;
+    height: 85%;
     z-index: 1;
     position: absolute;
     left: -20%;
@@ -68,7 +70,7 @@ main {
 /****************************** Equipamentos *****/
 
 .equipamentos {
-    flex-basis: 32%;
+    flex-basis: 25%;
 }
 
 .montador {
@@ -172,7 +174,7 @@ main {
 }
 
 .estatistica-valor {
-    flex-basis: 60%;
+    flex-basis: 70%;
     position: relative;
     margin: 10px 0 0;
     order: 2;
@@ -229,5 +231,68 @@ main {
         width: 96vw;
         height: 80vh;
         margin: 10vh auto;
+    }
+}
+
+main .robotron-colors{
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    text-align: center;
+}
+
+.h1-colors{
+    color: var(--main-branco);
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-branco);
+    background: rgba(0,0,0,0.6);
+    letter-spacing: 1.5px;   
+    
+}
+
+.btn-colors{
+    letter-spacing: 1px;
+    font-size: 23px;
+    display: block;
+    width: 100%;
+    height: 7vh;
+    clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
+    margin: 15px 0 15px 0;
+}
+.btn-colors:hover{
+    background:  rgba(0,0,0,0.6);
+    color: var(--main-branco);
+    border: 2px solid var(--main-branco)
+}
+
+.producao-loop{
+    animation: infinityLoop  2s forwards;
+}
+
+@keyframes infinityLoop{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1.5;
+    }
+}
+
+.loop{
+    width: 50px;
+    height: 50px;
+    border: 10px solid;
+    border-radius: 50%;
+    border-top-color: transparent;
+    margin: 0 auto;
+    color: var(--main-branco);
+    animation: loop 2s linear infinite;
+}
+
+@keyframes loop{
+    to {
+        transform: rotate(360deg);
     }
 }

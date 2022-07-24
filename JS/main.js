@@ -1,7 +1,11 @@
+const btnColors = document.querySelectorAll(".btn-colors")
 const controle = document.querySelectorAll("[data-controle]")
 const estatistica = document.querySelectorAll("[data-estatistica]")
-console.log(estatistica)
+const roboImg = document.getElementById("robotron-img")
+const btnProducaoIniciar = document.getElementById("producao")
+const loop = document.getElementById("loop")
 
+// robotron-2000 settings
 const pecas = {
     "bracos": {
         "forca": 29,
@@ -37,6 +41,7 @@ const pecas = {
 }
 
 
+// Statistics
 controle.forEach((elemento) => {
     elemento.addEventListener("click", (evento) => {
         manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
@@ -61,3 +66,37 @@ function atualizaEstatistica(peca){
         elemento.textContent = parseInt(elemento.textContent) + pecas [peca] [elemento.dataset.estatistica]
     })
 }
+
+
+// to  change robotron-2000 color 
+btnColors.forEach((elemento) => {
+    elemento.addEventListener("click", () =>{
+        if(elemento.value == "Branco"){
+            roboImg.src = "img/tron-branco.png"
+        }
+        else if(elemento.value == "Amarelo"){
+            roboImg.src = "img/tron-amarelo.png"
+        }
+        else if(elemento.value == "Preto"){
+            roboImg.src = "img/tron-Preto.png"
+        }
+        else if(elemento.value == "Rosa"){
+            roboImg.src = "img/tron-rosa.png"
+        }
+        else if(elemento.value == "Azul"){
+            roboImg.src = "img/tron-azul.png"
+        }
+        else{
+            roboImg.src = "img/tron-vermelho.png"
+        }
+    })
+} )
+
+
+// after clicking "Iniciar Produção" its name will change to "Em produção" and a loop circle will display
+
+btnProducaoIniciar.addEventListener("click", () => {
+    btnProducaoIniciar.value = "Em produção"
+    btnProducaoIniciar.classList.add("producao-loop")
+    loop.classList.add("loop")
+})
